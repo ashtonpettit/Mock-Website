@@ -12,9 +12,6 @@
 
     <body>
 
-                    <?php
-                    include "./includes/db.php";                      
-                    ?>
         <div class="wrapper"> 
                     <div class="title"><img src="images/Zody_title-removebg-preview.png"></div>
                         
@@ -33,29 +30,34 @@
                             <span class="modal_heading">
                                 <b>ENTER YOUR DETAILS</b>
                             </span>
-                            <form method="POST" action="insert.php">
+                            <form method="POST" action="questionpage.php">
                                 <input type="text" name="email" placeholder="Email"><br>
-                                <input type="text" name="username" placeholder="Username"><br>
+                                <input type="text" name="name" placeholder="First and Last Name"><br>
+                                <input type="number" name="age" placeholder="Age"><br>
                                 <input type="password" name="pass" placeholder="Password"><br>
                                 <input type="submit" name="submit" class="myButton" value="REGISTER">
                             </form>
                         </div>
                     </div> 
-
+                    <?php 
+                        
+                    ?>
                     <div class="modal_container" id="modalLogin">
                         <div class="modal">
                             <a href="#" class="close">X</a>
                             <span class="modal_heading">
                                 <b>LOGIN DETAILS</b>
                             </span>
-                            <form action="#">
-                                <input type="text" placeholder="Username"><br>
-                                <input type="password" placeholder="Password"><br>
-                                <input type="submit" class="myButton" value="LOGIN">
+                            <form method="POST" action="includes/login.php">
+                                <input type="text" placeholder="Email" name="email"><br>
+                                <input type="password" placeholder="Password" name="userKey"><br>
+                                <input type="submit" class="myButton" name="login" value="LOGIN">
                             </form>
                         </div>
 
                     </div> 
+
+
 
     </body>
     

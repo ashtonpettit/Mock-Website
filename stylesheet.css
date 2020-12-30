@@ -35,6 +35,32 @@ body {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #8750a1;
 }
+
+select {
+    background: transparent;
+    font-weight: 600;
+    width: 150px;
+    height: 35px;
+    padding: 2px;
+    line-height: 1;
+    border: 0;
+    border-radius: 15px;
+    border: solid 2px white;
+    font-size: 20px;
+}
+
+select > option {
+    background:#9f88d8;
+    border-radius: 15px;
+}
+
+label {
+    font-family:'Ubuntu', sans-serif;
+    color: #221527;
+    font-size: 20px;
+    font-weight: 600;
+}
+
 .myButton:hover {
 	background:linear-gradient(to top, #080928 10%, #9f88d8 100%);
 	background-color:#8750a1;
@@ -78,23 +104,27 @@ body {
 
 #homewrap {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: column;   
     align-items: center;
     text-align: center;
-    border: solid 2px white;
     margin-left: 350px;
     margin-right: 350px;
     height: 100vh;
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     text-align: center;
-    border: solid 2px white;
+    color: white;
 
 }
 .btnsDiv {
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
     top: 25px;
     padding: 20px;
 
@@ -114,11 +144,67 @@ body {
     height: 200px;
 }
 
+.buttonshome.is-active {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.buttonshome {
+    display: none;
+}
+
 .footer {
     height: 10%;
     width: 100%;
     position: fixed;
     bottom: 0;
+}
+
+
+.peopleHolder {
+    color: white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; 
+    width: 600px;
+    height:100%;
+}
+
+.personClass {
+    display: none;
+    
+}
+
+.personClass.is-active {
+    display: block;
+    width: 600px;
+    height: auto;
+}
+
+.lastDiv {
+    display: none;
+}
+.lastDiv.is-active {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 600px;
+    height: auto;
+}
+
+.endingDiv {
+    display: block;
+    height: auto;
+}
+
+.swipeDiv {
+    display: block;
+}
+
+.swipeDiv.is-inactive {
+    display: none;
 }
 
 /* Modal*/
@@ -217,7 +303,13 @@ input {
     cursor: pointer;
 }
 
-h1, h2, h3, p {
+h1, h3, p {
     color: white;
     font-family:  'Ubuntu', sans-serif;
 }
+
+h2 {
+    color: #221527;
+    font-family:'Ubuntu', sans-serif;
+}
+
