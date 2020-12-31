@@ -1,4 +1,3 @@
-
 //Initializing Variables
 num = 0;
 var persons = document.querySelectorAll(".personClass");
@@ -6,7 +5,6 @@ var buttonshome = document.querySelector(".buttonshome");
 var likeArr =[];
 var dislikeArr = [];
 var person = "";
-var lastDiv = document.querySelector(".lastDiv");
 var likeList = document.getElementById("likeList");
 var dislikeList = document.getElementById("dislikeList");
 
@@ -27,8 +25,19 @@ document.querySelector("#liked").addEventListener("click", function() {
     num++;
     
     if(num == persons.length) {
-        endofList();
-    }
+        buttonshome.classList.remove("is-active");
+        alert("the end");
+        var theLikes = "";
+        var theDisLikes = "";
+        for(i=0;i<likeArr.length;i++) {
+            theLikes += likeArr[i] + "<br >";
+        }
+        for(i=0;i<dislikeArr.length;i++) {
+            theDisLikes += dislikeArr[i] + "<br >";
+        }
+        likeList.insertAdjacentHTML('beforeend', theLikes);
+        dislikeList.insertAdjacentHTML('beforeend', theDisLikes);
+        }
     else {
         persons[num].classList.add("is-active");
     }
@@ -52,18 +61,7 @@ document.querySelector("#disliked").addEventListener("click", function() {
 
 //End of Users Function
 function endofList() {
-    buttonshome.classList.remove("is-active");
-    var theLikes = "";
-    var theDisLikes = "";
-    lastDiv.classList.add("is-active");
-    for(i=0;i<likeArr.length;i++) {
-        theLikes += likeArr[i] + "<br >";
-    }
-    for(i=0;i<dislikeArr.length;i++) {
-        theDisLikes += dislikeArr[i] + "<br >";
-    }
-    likeList.insertAdjacentHTML('beforeend', theLikes);
-    dislikeList.insertAdjacentHTML('beforeend', theDisLikes);
+    
     
 }
 

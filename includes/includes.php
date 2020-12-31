@@ -2,6 +2,7 @@
 
 if(isset($_POST["submit"])) {
     session_start();
+    
 
     $email = $_POST['email'];
     $username = $_POST['name'];
@@ -16,6 +17,7 @@ if(isset($_POST["submit"])) {
 else if(isset($_POST["update"])) {
     session_start();
     
+    
     $gender = $_POST['gender'];
     $genderPref = $_POST['genderPref'];
     $zodiac = $_POST['zodiac'];
@@ -26,3 +28,6 @@ else if(isset($_POST["update"])) {
     $_SESSION['prefGender'] = $genderPref;
     }
 }
+
+
+					

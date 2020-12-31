@@ -28,7 +28,7 @@ function newUser($email, $username, $age, $pass) {
         $user = $username;
         
     }
-        
+    mysqli_close($conn);
     return $user;
 }
 
@@ -45,7 +45,7 @@ function updateUser($gender, $genderPref, $zodiac, $id) {
         $data = "Successfully Updated";
         
     }
-        
+    mysqli_close($conn);    
     return $data;
 }
 
@@ -60,6 +60,7 @@ function loginUser($email, $pass) {
     else {
         $row = "D";
     }
+    mysqli_close($conn);
     return $row;
 } 
 
@@ -67,7 +68,7 @@ function getQuery($query) {
     $conn = makeConnection();
     $result=mysqli_query($conn, $query);
     
-
+    mysqli_close($conn);
     return $result->fetch_all(MYSQLI_ASSOC);
 }
 
